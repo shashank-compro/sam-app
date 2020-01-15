@@ -7,8 +7,8 @@ phases:
   build:
     commands:
       # Use AWS SAM to package the application by using AWS CloudFormation
-      - sam package --template template.yaml --s3-bucket $S3_BUCKET --output-template template-export.yml
+      - sam build --template template.yaml --s3-bucket $S3_BUCKET
+      - sam deploy
 artifacts:
-  type: zip
   files:
-    - template-export.yml
+    - '**/*'
