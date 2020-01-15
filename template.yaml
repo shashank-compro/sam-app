@@ -1,0 +1,29 @@
+Transform: AWS::Serverless-2016-10-31
+Description: Outputs the time
+
+Resources:
+  TimeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: hello-world/app.lambdaHandler   # firstsample.js file is in firstsample direcotory
+      Runtime: nodejs12.x
+      CodeUri: ./                          # Look for code in the same directory as the output SAM file
+      Events:
+        HelloWorld2:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: GET
+  
+  SecondSampleFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: hello-world2/some-controller.lambdaHandler2                # didn't have to include secondsample directory
+      Runtime: nodejs12.x
+      CodeUri: ./           # code is in the secondsample directory, located in same directory
+      Events:
+        HelloWorld2:
+          Type: Api
+          Properties:
+            Path: /hello2
+            Method: GET
