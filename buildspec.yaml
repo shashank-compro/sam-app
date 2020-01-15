@@ -10,7 +10,7 @@ phases:
     commands:
       # Use AWS SAM to package the application by using AWS CloudFormation
       - sam build --template template.yaml 
-      - sam deploy --template-file template.yaml
+      - sam deploy --template-file template.yaml --stack-name sam-app-CI
 artifacts:
   files:
     - '**/*'
