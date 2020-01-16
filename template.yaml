@@ -5,7 +5,7 @@ Resources:
   TimeFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: hello-world/app.lambdaHandler   # firstsample.js file is in firstsample direcotory
+      Handler: src/Handlers/hello-world/app.lambdaHandler   # firstsample.js file is in firstsample direcotory
       Runtime: nodejs10.x
       CodeUri: ./                          # Look for code in the same directory as the output SAM file
       Events:
@@ -18,7 +18,7 @@ Resources:
   SecondSampleFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: hello-world2/some-controller.lambdaHandler2                # didn't have to include secondsample directory
+      Handler: src/Handlers/hello-world2/some-controller.lambdaHandler2             # didn't have to include secondsample directory
       Runtime: nodejs10.x
       CodeUri: ./           # code is in the secondsample directory, located in same directory
       Events:
