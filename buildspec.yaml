@@ -1,16 +1,17 @@
-version: 0.2
 phases:
   install:
     runtime-versions:
       nodejs: 10
-    commands:
-      # Install all dependencies (including dependencies for running tests)
-      - npm install
+
   build:
     commands:
-      # Use AWS SAM to package the application by using AWS CloudFormation
-      - sam build --template template.yaml 
-      - sam deploy --template-file template.yaml --s3-bucket codepipeline-ap-south-1-873493824052 --stack-name test-CI-app
+      - sam build
+
+  post_build:
+    commands:
+      - sam package --output-template-file packaged.yaml --s3-bucket codepipeline-ap-south-1-873493824052
+
 artifacts:
+  type: zip
   files:
-    - '**/*'
+    - packaged.yaml
