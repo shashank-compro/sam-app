@@ -128,5 +128,8 @@ $RECYCLE.BIN/
 # Build folder
 .aws-sam/
 
+# Variables file
+samconfig.toml
+
 
 # End of https://www.gitignore.io/api/osx,node,linux,windows

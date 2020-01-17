@@ -1,29 +1,29 @@
 Transform: AWS::Serverless-2016-10-31
-Description: Outputs the time
+Description: Hello World Function
 
 Resources:
-  TimeFunction:
+  HelloWorldJsonFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: src/Handlers/hello-world/app.lambdaHandler   # firstsample.js file is in firstsample direcotory
+      Handler: src/Handlers/hello-world-json/app.helloWorldJsonHandler
       Runtime: nodejs10.x
-      CodeUri: ./                          # Look for code in the same directory as the output SAM file
+      CodeUri: ./
       Events:
-        HelloWorld2:
+        HelloWorld:
           Type: Api
           Properties:
-            Path: /hello
+            Path: /hellojson
             Method: GET
   
-  SecondSampleFunction:
+  HelloWorldHtmlFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: src/Handlers/hello-world2/some-controller.lambdaHandler2             # didn't have to include secondsample directory
+      Handler: src/Handlers/hello-world-html/app.helloWorldHtmlHandler
       Runtime: nodejs10.x
-      CodeUri: ./           # code is in the secondsample directory, located in same directory
+      CodeUri: ./
       Events:
-        HelloWorld2:
+        HelloWorld:
           Type: Api
           Properties:
-            Path: /hello2
+            Path: /hellohtml
             Method: GET
