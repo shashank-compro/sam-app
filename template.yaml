@@ -2,27 +2,27 @@ Transform: AWS::Serverless-2016-10-31
 Description: Hello World Function
 
 Resources:
-  HelloWorldJsonFunction:
+  HelloWorldJsonFunction-Demo:
     Type: AWS::Serverless::Function
     Properties:
       Handler: src/Handlers/hello-world-json/app.helloWorldJsonHandler
       Runtime: nodejs10.x
       CodeUri: ./
       Events:
-        HelloWorld:
+        HelloWorld-Demo:
           Type: Api
           Properties:
             Path: /hellojson
             Method: GET
   
-  HelloWorldHtmlFunction:
+  HelloWorldHtmlFunction-Demo:
     Type: AWS::Serverless::Function
     Properties:
       Handler: src/Handlers/hello-world-html/app.helloWorldHtmlHandler
       Runtime: nodejs10.x
       CodeUri: ./
       Events:
-        HelloWorld:
+        HelloWorld-Demo:
           Type: Api
           Properties:
             Path: /hellohtml
