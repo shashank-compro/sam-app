@@ -18,7 +18,7 @@ exports.helloWorldJsonHandler = async (event, context) => {
         response = {
             'statusCode': 200,
             'body': JSON.stringify({
-                message: `Hello from ${config.firstFunction}`
+                message: `Hello from ${config.firstFunction} - Demo`
             }),
             'headers': {
                 'Content-Type': 'application/json'

@@ -17,7 +17,7 @@ exports.helloWorldHtmlHandler = async (event, context) => {
     try {
         response = {
             'statusCode': 200,
-            'body': `<h1>Hello from ${config.secondFunction}</h1>`,
+            'body': `<h1>Hello from ${config.secondFunction} - Demo</h1>`,
             'headers': {
                 'Content-Type': 'text/html'
             }
